@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+package-lock.json
+yarn.lock
+bun.lock
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build/dist
+dist/
+build/
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+.DS_Store
+
+# Testing
+coverage/
+.nyc_output/
+
+# Vite
+.vite/
+
+# Docker
+.docker/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Misc
+*.log
+.cache/
