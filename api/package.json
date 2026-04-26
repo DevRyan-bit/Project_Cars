@@ -1,0 +1,16 @@
+{
+  "name": "cars-api",
+  "version": "1.0.0",
+  "description": "Cars API - Vercel Serverless Functions",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^9.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "node api/server.js",
+    "build": "echo 'API ready for Vercel deployment'"
+  }
+}

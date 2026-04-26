@@ -12,12 +12,14 @@ A modern, full-stack web application for browsing, exploring, and pre-ordering p
 - **Dark Mode**: Theme toggle for user preference
 - **Authentication**: Secure login for admin access
 - **Real-time Updates**: Live order status and inventory management
+- **Vercel Deployment**: One-click deployment with serverless API functions
 
 ## 🛠 Tech Stack
 
 - **Frontend**: React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui
 - **Backend**: Node.js, Express.js, SQLite (with file-based DB)
-- **DevOps**: Docker, Docker Compose
+- **API**: Vercel Serverless Functions with automatic deployment
+- **DevOps**: Docker, Docker Compose, Vercel
 - **Testing**: Vitest, Playwright
 - **Linting**: ESLint
 
@@ -26,6 +28,7 @@ A modern, full-stack web application for browsing, exploring, and pre-ordering p
 - Node.js 16+
 - npm or yarn
 - Docker & Docker Compose (for containerized setup)
+- Vercel account (for cloud deployment)
 
 ## 🚀 Quick Start
 
@@ -76,13 +79,19 @@ Access at http://localhost:3000
 | Endpoint | Method | Description |
 |----------|--------|-------------|
 | `/api/cars` | GET | Get all vehicles |
-| `/api/orders` | POST | Create new order |
+| `/api/cars/:id` | GET | Get specific vehicle |
 | `/api/auth/login` | POST | Admin authentication |
-| `/health` | GET | Health check |
+| `/api/auth/profile` | GET | Get current user (protected) |
+| `/api/orders` | GET | Get all orders (protected) |
+| `/api/transactions` | GET | Get transactions (protected) |
+| `/api/health` | GET | Health check |
+| `/api/hello` | GET | Test endpoint |
+
+See [API_ENDPOINTS.md](./API_ENDPOINTS.md) for detailed documentation.
 
 ## 🌐 Deployment
 
-### Production Build
+### Local Production Build
 ```bash
 npm run build
 ```
@@ -90,6 +99,37 @@ npm run build
 ### Docker Deployment
 ```bash
 docker-compose -f docker-compose.yml up -d
+```
+
+### ⚡ Vercel Deployment (Recommended)
+
+Deploy both frontend and backend serverless functions on Vercel with zero configuration:
+
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Deploy
+vercel
+
+# Set environment variables in Vercel dashboard:
+# JWT_SECRET=your-secret-key
+# CORS_ORIGIN=your-domain.com
+```
+
+**Features:**
+- Automatic deployments on git push
+- Serverless API functions in `/api`
+- Frontend automatically optimized
+- Free tier: 100GB bandwidth/month
+- Custom domain support
+
+For detailed setup instructions, see [VERCEL_SETUP_GUIDE.md](./VERCEL_SETUP_GUIDE.md)
+
+Run the pre-deployment checklist:
+```bash
+chmod +x vercel-checklist.sh
+./vercel-checklist.sh
 ```
 
 ## 🤝 Contributing
