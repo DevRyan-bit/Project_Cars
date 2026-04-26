@@ -1,11 +1,21 @@
 {
-  "buildCommand": "npm run build:vercel",
-  "outputDirectory": "dist",
+  "experimentalServices": {
+    "frontend": {
+      "entrypoint": "frontend",
+      "routePrefix": "/",
+      "framework": "vite"
+    },
+    "backend": {
+      "entrypoint": "backend",
+      "routePrefix": "/_/backend"
+    }
+  },
   "regions": ["iad1"],
   "env": {
     "NODE_ENV": "production",
     "JWT_SECRET": "@JWT_SECRET",
-    "CORS_ORIGIN": "@CORS_ORIGIN"
+    "CORS_ORIGIN": "@CORS_ORIGIN",
+    "PORT": "5000"
   },
   "functions": {
     "api/**/*.js": {
