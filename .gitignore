@@ -42,3 +42,6 @@ Thumbs.db
 .cache/
 .vercel
 .env*
+
+# Local backend storage
+backend/database/cars_catalog.json
