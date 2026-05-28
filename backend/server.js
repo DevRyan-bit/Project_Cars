@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
-require("./database/init"); // Initialize database
+require("./database/init.js"); // Initialize database
 
 const app = express();
 const PORT = process.env.PORT || 5000;
