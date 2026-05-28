@@ -40,3 +40,5 @@ Thumbs.db
 # Misc
 *.log
 .cache/
+.vercel
+.env*

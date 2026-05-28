@@ -13,8 +13,8 @@
   "regions": ["iad1"],
   "env": {
     "NODE_ENV": "production",
-    "JWT_SECRET": "@JWT_SECRET",
-    "CORS_ORIGIN": "@CORS_ORIGIN",
+    "JWT_SECRET": "your-super-secret-key-min-32-chars",
+    "CORS_ORIGIN": "https://yourdomain.vercel.app,https://yourdomain.com",
     "PORT": "5000"
   },
   "functions": {
